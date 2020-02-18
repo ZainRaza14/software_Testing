@@ -1,10 +1,7 @@
-import json
-
-import requests
-
-from github_ReposCommits import getRepos, getCommits
 
 import unittest
+
+from github_ReposCommits import getRepos, getCommits
 
 class testGithubAPI(unittest.TestCase):
 
