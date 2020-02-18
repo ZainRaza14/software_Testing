@@ -1,5 +1,7 @@
 import json
 
+pip install requests
+
 import requests
 
 
