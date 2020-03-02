@@ -13,10 +13,10 @@ from unittest.mock import patch, Mock
 
 class testGithubAPI(unittest.TestCase):
 	@patch('github_ReposCommits.requests.get')
-    def testGithubAPI_1(self, mock_get): 
+    def testGithubAPI_1(self, mock_get):
     	mock_get.return_value.status_code = 200
-        response = getResponse('ZainRaza14')
-        self.assertEqual(response.status_code, 200)
+    	response = getResponse('ZainRaza14')
+    	self.assertEqual(response.status_code, 200)
 
     
         
