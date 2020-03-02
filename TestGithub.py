@@ -1,15 +1,24 @@
 
 import unittest
 
-from github_ReposCommits import getRepos, getCommits
+import requests
+
+import github_ReposCommits
+
+from github_ReposCommits import getRepos, getCommits, getResponse
+
+from unittest.mock import patch, Mock
+
+
 
 class testGithubAPI(unittest.TestCase):
+	@patch('github_ReposCommits.requests.get')
+    def testGithubAPI_1(self, mock_get): 
+    	mock_get.return_value.status_code = 200
+        response = getResponse('ZainRaza14')
+        self.assertEqual(response.status_code, 200)
 
-    def testGithubAPI_1(self): 
-        self.assertEqual(getRepos('ZainRaza14'), 30)
-
-    def testGithubAPI_2(self): 
-        self.assertEqual(getCommits('ZainRaza14', 'AI-Car-Controller'), 126)
+    
         
     
 
